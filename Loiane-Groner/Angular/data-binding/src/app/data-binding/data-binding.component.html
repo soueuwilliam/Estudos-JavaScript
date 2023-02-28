@@ -1,3 +1,4 @@
+<!---
 <section class="property-binding">
   <article>
     <h3>Interpolation / Interpolação</h3>
@@ -6,4 +7,113 @@
     <p>Resultado de 1 + 1 não é {{1 + 1 + getvalor()}}</p>
     <p>Curso angular e gosto do curso: {{cursoAngular && getcurtirCurso()}} </p>
   </article>
+
+  <article>
+    <h3> Property Binding </h3>
+    <img src="{{ urlImagem }}"> <br>
+    <img [src]="urlImagem">
+  </article>
+
+  <article>
+    <h3> class e style Binding</h3>
+    <div>
+      Selecione um classe
+      <select #classe (change)="0">
+        <option value="alert-success"> Sucesso </option>
+        <option value="alert-info"> Info </option>
+        <option value="alert-warning"> Alerta </option>
+        <option value="alert-danger"> Erro </option>
+      </select>
+      <br><br>
+      <div class="alert {{ classe.value }}">
+        Texto Colorido conforme valor da combobox
+      </div>
+
+      <div class="alert " role="alert" [class.alert-success]="classe.value == 'alert-success'">
+        A simple success alert—check it out!
+      </div>
+      <div class="alert " role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+        A simple danger alert—check it out!
+      </div>
+      <div class="alert " role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+        A simple warning alert—check it out!
+      </div>
+      <div class="alert " role="alert" [class.alert-info]="classe.value == 'alert-info'">
+        A simple info alert—check it out!
+      </div>
+
+      <div class="alert " role="alert" [style.display]="classe.value =='alert-danger' ? 'block': 'none' ">
+        Esse texto só aperece em caso de erro
+      </div>
+
+    </div>
+  </article>
+</section>
+
+<section class="event-binding">
+  <article>
+    <h3>Event Binding </h3>
+    <div>
+      <button (click)="botaoclicado()" class="btn btn-primary"> Me clique </button>
+    </div>
+    <br><br>
+    <div>
+      <input type="text"
+        (keyup)="Onkeyup($event)"
+        (keyup.enter)="SalvarValor($event)"
+        (blur)="SalvarValor($event)"
+        #campoInput>
+
+        <p>Valor atual : {{valoratual}}</p>
+        <p>Valor salvo : {{valorsalvo}}</p>
+    </div>
+
+    <span
+    (mouseover)="OnMouseOverOut()"
+    (mouseout)="OnMouseOverOut()"
+    [class.highligth] ="ismouseover">Passe o mouse sobre mim</span>
+
+  </article>
+
+</section>
+
+
+<section class="two-way-binding">
+  <article>
+    <h3> two way data bindung</h3>
+    <div>
+
+      <input type="text"
+      [value]="nome"
+      (input)="Salvarnome($event)">
+
+      <input type="text"
+      [ngModel] = "nome"
+      (ngModelChange) = "Salvarnome($event)"/>
+
+      <input type="text" [(ngModel)]="nome">
+      <p>Você digitou: {{nome}}</p>
+
+      <p>Meu nome é {{ pessoa.nome }} e tenho {{pessoa.idade}} anos de idade</p>
+      <input type="text" [(ngModel)] = "pessoa.nome">
+      <input type="text" [(ngModel)] = "pessoa.idade">
+
+
+
+
+    </div>
+  </article>
+</section>
+-->
+
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output properties</h3>
+
+    <app-curso [nome] = "nomedocurso"></app-curso>
+
+    <Contador [valor]="10"
+              (MudouValor)="onMudouvalor($event)"> </Contador>
+  </article>
+
 </section>
