@@ -1,0 +1,17 @@
+<h1> Style com proprety binding (style binding)</h1>
+<button [style.backgroundColor]=" ativo ?'blue':'gray'" [style.color]="ativo ?'gray':'blue'"
+  [style.fontWeight]=" ativo ?'bold':'normal'" [style.fontSize]="tamanhoFonte + 'px'" (click)="Onclick()">
+  Mudar atributo 'ativo'
+</button>
+<br>
+
+
+
+<button [ngStyle]= "{
+    'backgroundColor':(ativo ?'blue':'gray'),
+    'color': (ativo ?'gray':'blue'),
+    'fontWeight':  (ativo ?'bold':'normal'),
+    'fontSize' : (tamanhoFonte + 'px') }"
+    (click)="Onclick()">
+  Mudar atributo 'ativo'
+</button>

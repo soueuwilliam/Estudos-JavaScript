@@ -1,0 +1,24 @@
+<p appFundoAmarelo >texto com fundo amarelo</p>
+
+<button appFundoAmarelo >botão com o fundo amarelo </button>
+
+
+<p appHighliteMouse>
+  texto com highlite quando passo o mouse
+</p>
+
+<p [appHighlite]="'red'" [defaultColor]="'grey'"> texto com highlites com cores custumizadas</p>
+
+<div *ngIf= "mostrarCursos" >Lista de cursos aqui: {{cursos}}</div>
+
+
+<div *appNgElse= "mostrarCursos" >não existe cursos a serem listados</div>
+
+<br>
+<button (click)="Mostrarcursos()"> Mostrar ou esconder cursos </button>
+
+<template [appNgElse]="mostrarCursos">
+  <div>
+    Não existe cursos para serem listados
+  </div>
+</template>

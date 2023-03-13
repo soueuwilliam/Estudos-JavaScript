@@ -1,0 +1,6 @@
+<p> Descrição: {{ tarefa.desc }} </p>
+<!--<p>Responsavel {{ tarefa.Responsavel }}</p>-->
+<p>Responsavel: {{ tarefa.responsavel != null ? tarefa.responsavel.nome :' ' }} </p>
+
+<!--Operador elvis : faz a verificação se o operador é nulo ou não -->
+<p>Responsavel {{ tarefa.Responsavel?.usuario?.nome }}</p>
